@@ -30,3 +30,15 @@ let dados = [
         link : "https://www.cpt.com.br/codigo-civil/tipos-de-contrato-locacao-de-coisas"
     },
 ]
+const readMoreButton = document.querySelector('.read-more');
+const fullDescription = document.querySelector('.full-description');
+
+readMoreButton.addEventListener('click', () => {
+    if (fullDescription.style.display === 'none') {
+        fullDescription.style.display = 'block';
+        readMoreButton.textContent = 'Ler menos';
+    } else {
+        fullDescription.style.display = 'none';
+        readMoreButton.textContent = 'Ler mais';
+    }
+});

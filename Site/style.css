@@ -1,5 +1,52 @@
-body {background-color: #ddd;
-    text-align: center;}
+.flex-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px; /* Espaçamento entre os elementos */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+}
+button {
+    background-color: #4CAF50; /* Cor de fundo verde */
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;   
+
+}
+.game-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+.game-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-description {
+    text-align: center;
+}
+
+.read-more {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.rental-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
 main {flex: 1;}
 img {
     width: 200px;
