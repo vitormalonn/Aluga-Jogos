@@ -1,0 +1,1 @@
+code . && code --goto ${file} && code --runTask "Start Live Server"

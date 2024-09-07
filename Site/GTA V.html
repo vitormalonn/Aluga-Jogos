@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">   
+   
+
+  <title>Aluga Jogos</title>
+</head>
+<body>
+  <section class="game-card">
+    <h2>GTA V</h2>
+    <div class="game-info">
+      <img src="img\GTA V\Capa.jpg" alt="Imagem do jogo">
+      <div class="game-description">
+        <p>
+          Grand Theft Auto V para PC oferece aos jogadores a opção de explorar o gigantesco e premiado mundo de
+           Los Santos e Blaine County em resoluções de até 4K e além, assim como a chance de experimentar o jogo rodando a 60 FPS (quadros por segundo).
+          <a href="#" class="read-more">Ler mais</a>
+        </p>
+        <p class="full-description" style="display: none;">
+          O jogo oferece uma ampla seleção de opções de personalização específicas para o PC, com mais de 25 configurações separadas para qualidade de textura,
+           sombreamentos, suavização de bordas e muito mais. Além disso, ele contém diversas opções de personalização dos controles de mouse e teclado.
+            Entre as opções adicionais estão a densidade da população, o controle do tráfego de carros e pedestres, suporte para dois ou três monitores,
+             compatibilidade com telas 3D e suporte para controle plug-and-play.
+                     
+      </div>
+      <div class="rental-options">
+        <label for="hours">Alugar por:</label>
+        <select id="hours" name="hours">
+          <option value="1">12 horas</option>
+          <option value="2">24 horas</option>
+          <option value="3">36 horas</option>
+        </select>
+        <button type="button">ALUGAR</button>
+      </div>
+    </div>
+  </section>
+  <script>
+    const readMoreButton = document.querySelector('.read-more');
+    const fullDescription = document.querySelector('.full-description');
+
+    readMoreButton.addEventListener('click', () => {
+      if (fullDescription.style.display === 'none') {
+        fullDescription.style.display = 'block';
+        readMoreButton.textContent = 'Ler menos';
+      } else {
+        fullDescription.style.display = 'none';
+        readMoreButton.textContent = 'Ler mais';
+      }
+    });
+  </script>
+</body>
+</html>
