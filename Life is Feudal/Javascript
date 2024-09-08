@@ -1,0 +1,41 @@
+document.addEventListener('DOMContentLoaded', () => {
+  // Selectors and initialization
+  const readMoreButton = document.querySelector('.read-more');
+  const fullDescription = document.querySelector('.full-description');
+  const rentalSelect = document.querySelector('#hours');
+  const rentalCost = document.querySelector('#rental-cost');
+  const rentalButton = document.querySelector('button');
+
+  // Function to show/hide the full description
+  readMoreButton.addEventListener('click', () => {
+    fullDescription.classList.toggle('open');
+    readMoreButton.textContent = fullDescription.classList.contains('open') ? 'Ler menos' : 'Ler mais';
+  });
+
+  // Update the rental cost
+  rentalSelect.addEventListener('change', updateRentalCost);
+
+  // Confirm the rental and show the value
+  rentalButton.addEventListener('click', () => {
+    alert(`Aluguel confirmado! Total: ${rentalCost.textContent}`);
+  });
+
+  // Function to calculate and update the rental cost
+  function updateRentalCost() {
+    const hours = parseInt(rentalSelect.value);
+    let cost = 0;
+
+    switch (hours) {
+      case 1:
+        cost = 5.00;
+        break;
+      case 2:
+        cost = 8.00;
+        break;
+      default:
+        cost = 0.00;
+    }
+
+    rentalCost.textContent = `Total: R$ ${cost.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  }
+});

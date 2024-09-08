@@ -1,31 +1,12 @@
-// Função para mostrar/ocultar a descrição completa
-function toggleDescription() {
-    const fullDescription = document.querySelector('.full-description');
-    fullDescription.style.display = fullDescription.style.display === 'none' ? 'block' : 'none';
-    readMoreButton.textContent = fullDescription.style.display === 'none' ? 'Ler mais' : 'Ler menos';
-  }
-  
-// Função para calcular e atualizar o custo do aluguel
-function calculateRentalCost() {
-    const hoursSelect = document.getElementById('hours');
-    const rentalCostElement = document.getElementById('rental-cost');
-  
-    const hourlyRates = {
-      1: 5,
-      2: 10
-    };
-  
-    const selectedHours = hoursSelect.value;
-    const hourlyRate = hourlyRates[selectedHours];
-    const totalCost = hourlyRate;
-  
-    rentalCostElement.textContent = `Total: R$ ${totalCost.toFixed(2)}`;
-  
-    // Verificação para depuração
-    console.log('Valor selecionado:', selectedHours);
-    console.log('Valor total:', totalCost);
-  }
-  
-  // Adiciona o event listener
-  const hoursSelect = document.getElementById('hours');
-  hoursSelect.addEventListener('change', calculateRentalCost);
+const readMoreButton = document.querySelector('.read-more');
+const fullDescription = document.querySelector('.full-description');
+
+readMoreButton.addEventListener('click', () => {
+    if (fullDescription.style.display === 'none') {
+        fullDescription.style.display = 'block';
+        readMoreButton.textContent = 'Ler menos';
+    } else {
+        fullDescription.style.display = 'none';
+        readMoreButton.textContent = 'Ler mais';
+    }
+});

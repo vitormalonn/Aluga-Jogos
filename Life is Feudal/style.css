@@ -1,0 +1,96 @@
+/* Define o layout flexível para o contêiner que engloba a imagem e o texto */
+.game-info {
+    display: flex;
+    align-items: flex-start; /* Alinha o conteúdo no topo */
+    justify-content: flex-start; /* Mantém os itens alinhados à esquerda */
+    gap: 20px; /* Espaço entre a imagem e o texto */
+    max-width: 100%; /* Garante que o conteúdo não ultrapasse a largura do contêiner */
+}
+
+.game-description {
+    width: 70%; /* Define a largura do bloco de descrição */
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+.game-info img {
+    width: 30%; /* Define a largura da imagem */
+    max-width: 200px; /* Limita a largura máxima da imagem */
+    height: auto; /* Ajusta a altura automaticamente */
+}
+
+/* Funcionalidade do botão 'ler mais' */
+.full-description {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+}
+
+.full-description.open {
+    max-height: 1000px; /* Ajuste o valor conforme necessário */
+}
+
+.read-more {
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+}
+
+.game-description p {
+    font-size: 16px;
+    line-height: 1.6;
+    word-break: break-word;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.game-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.game-info img {
+    border-radius: 8px;
+}
+
+.rental-options {
+    margin-top: 20px;
+}
+
+#hours {
+    margin-right: 10px;
+}
+
+.rental-options button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.rental-options button:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .game-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .game-info img {
+        width: 80%;
+        max-width: 150px;
+    }
+
+    .game-description {
+        width: 100%;
+    }
+}
